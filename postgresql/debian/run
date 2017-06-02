@@ -1,0 +1,16 @@
+#!/bin/sh
+
+case "$1" in
+"")
+	echo "Usage: $0 <name>"
+	exit 1
+	;;
+-*)
+	echo "Usage: $0 <name>"
+	exit 0
+	;;
+*)
+	docker run -p 5432:5432 --name $1 -d debian-postgres:9.4
+	;;
+esac
+
